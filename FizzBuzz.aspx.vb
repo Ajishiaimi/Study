@@ -9,7 +9,8 @@ Partial Class FizzBuzz
     Protected Sub btn1_Click(sender As Object, e As EventArgs) Handles btn_fz.Click
         Dim Result As String = ""
         Dim Default_Number As String = ""
-        Dim MaxNumber As Integer = FB_Const.初期値
+        Dim MinNumber As Integer = FB_Const.初期値
+        Dim MaxNumber As Integer = FB_Const.最大値
 
         'テキストボックスの入力チェックは未実装
 
@@ -17,15 +18,15 @@ Partial Class FizzBuzz
             MaxNumber = Me.txtNumber.Text
         End If
 
-        For Number As Integer = 1 To MaxNumber
-            Dim Count As Integer = 0
+        For Number As Integer = MinNumber To MaxNumber
+            Dim bit As Integer = 0
             If Number Mod 3 = 0 Then
-                Count = Count + 2
+                bit = bit + 2 ^ 1
             End If
             If Number Mod 5 = 0 Then
-                Count = Count + 4
+                bit = bit + 2 ^ 2
             End If
-            Select Case Count
+            Select Case bit
                 Case 2
                     Result = Result & FB_Const.出力結果_Fizz & FB_Const.改行
                     Default_Number = Default_Number & Number & FB_Const.改行
