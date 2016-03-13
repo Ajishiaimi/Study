@@ -36,10 +36,10 @@
                     </tr>
                 <tr>
                     <td>
-                        【通常版】
+                        <asp:Label ID="lbl_Normal" runat="server" Text="" />
                     </td>
                     <td>
-                        【FizzBuzz版】
+                        <asp:Label ID="lbl_FizzBuzz" runat="server" Text="" />
                     </td>
                 </tr>
                     <tr>

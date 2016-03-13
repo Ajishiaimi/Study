@@ -13,6 +13,8 @@ Partial Class FizzBuzz
         Dim MaxNumber As Integer = FB_Const.最大値
 
         'テキストボックスの入力チェックは未実装
+        Me.lbl_Normal.Text = "【通常版】"
+        Me.lbl_FizzBuzz.Text = "【FizzBuzz版】"
 
         If Not String.IsNullOrEmpty(Me.txtNumber.Text) Then
             MaxNumber = Me.txtNumber.Text
@@ -29,17 +31,14 @@ Partial Class FizzBuzz
             Select Case bit
                 Case 2
                     Result = Result & FB_Const.出力結果_Fizz & FB_Const.改行
-                    Default_Number = Default_Number & Number & FB_Const.改行
                 Case 4
                     Result = Result & FB_Const.出力結果_Buzz & FB_Const.改行
-                    Default_Number = Default_Number & Number & FB_Const.改行
                 Case 6
                     Result = Result & FB_Const.出力結果_FizzBuzz & FB_Const.改行
-                    Default_Number = Default_Number & Number & FB_Const.改行
                 Case Else
                     Result = Result & Number & FB_Const.改行
-                    Default_Number = Default_Number & Number & FB_Const.改行
             End Select
+            Default_Number = Default_Number & Number & FB_Const.改行
         Next
         Me.lbl_Result.Text = Result
         Me.lbl_Number.Text = Default_Number
@@ -49,6 +48,8 @@ Partial Class FizzBuzz
     ''' クリアボタン押下
     ''' </summary>
     Protected Sub btn_c_Click(sender As Object, e As EventArgs) Handles btn_c.Click
+        Me.lbl_Normal.Text = ""
+        Me.lbl_FizzBuzz.Text = ""
         Me.lbl_Result.Text = ""
         Me.lbl_Number.Text = ""
     End Sub
