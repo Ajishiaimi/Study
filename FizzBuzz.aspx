@@ -26,29 +26,32 @@
                 </tr>
                     <tr>
                         <td colspan="2">
-                            <asp:Button ID="btn_fz" runat="server" Text="ポチっとな" />
+                            <asp:Button ID="btnFizzBuzz" runat="server" Text="ポチっとな" />
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <asp:Button ID="btn_c" runat="server" Text="クリア" />
+                            <asp:Button ID="btnClear" runat="server" Text="クリア" />
                         </td>
                     </tr>
                 <tr>
+                    <asp:Panel ID="Panel1" runat="server">
                     <td>
-                        <asp:Label ID="lbl_Normal" runat="server" Text="" />
+                        <asp:Label ID="lblNumberTitle" runat="server" Text="【通常版】" />
                     </td>
                     <td>
-                        <asp:Label ID="lbl_FizzBuzz" runat="server" Text="" />
+                        <asp:Label ID="lblResultTitle" runat="server" Text="【FizzBuzz版】" />
                     </td>
+                    </asp:Panel>
                 </tr>
+                
                     <tr>
                         <td>
-                            <asp:Label ID="lbl_Number" runat="server" Text="" />
+                            <asp:Label ID="lblNumberOutput" runat="server" Text="" />
 
                         </td>
                         <td>
-                            <asp:Label ID="lbl_Result" runat="server" Text="" />
+                            <asp:Label ID="lblResultOutput" runat="server" Text="" />
                         </td>
                     </tr>
             </table>

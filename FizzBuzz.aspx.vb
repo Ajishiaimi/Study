@@ -1,57 +1,67 @@
-﻿Imports FizzBuzz_Const
+﻿Option Explicit On
+
+Imports FizzBuzzConst
 
 Partial Class FizzBuzz
     Inherits Page
 
     ''' <summary>
+    ''' ページロード
+    ''' </summary>
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.Panel1.Visible = False
+    End Sub
+
+    ''' <summary>
     ''' ポチっとなボタン押下時
     ''' </summary>
-    Protected Sub btn1_Click(sender As Object, e As EventArgs) Handles btn_fz.Click
-        Dim Result As String = ""
-        Dim Default_Number As String = ""
-        Dim MinNumber As Integer = FB_Const.初期値
-        Dim MaxNumber As Integer = FB_Const.最大値
+    Protected Sub btn1_Click(sender As Object, e As EventArgs) Handles btnFizzBuzz.Click
+        Dim ResultOutput As String = ""
+        Dim NumberOutput As String = ""
+        Dim MinNumber As Integer = FizzBuzzConst.Values.初期値
+        Dim MaxNumber As Integer = FizzBuzzConst.Values.最大値
 
-        'テキストボックスの入力チェックは未実装
-        Me.lbl_Normal.Text = "【通常版】"
-        Me.lbl_FizzBuzz.Text = "【FizzBuzz版】"
+        ' TODO:テキストボックスの入力チェックは未実装
+        Me.Panel1.Visible = True
 
         If Not String.IsNullOrEmpty(Me.txtNumber.Text) Then
-            MaxNumber = Me.txtNumber.Text
+            MaxNumber = Integer.Parse(Me.txtNumber.Text)
         End If
 
         For Number As Integer = MinNumber To MaxNumber
-            Dim bit As Integer = 0
+            Dim Bit As Integer = 0
             If Number Mod 3 = 0 Then
-                bit = bit + 2 ^ 1
+                Bit = Bit + 2 ^ 1
             End If
             If Number Mod 5 = 0 Then
-                bit = bit + 2 ^ 2
+                Bit = Bit + 2 ^ 2
             End If
-            Select Case bit
+            Select Case Bit
                 Case 2
-                    Result = Result & FB_Const.出力結果_Fizz & FB_Const.改行
+                    ResultOutput = ResultOutput & FizzBuzzConst.Text.出力結果_Fizz & FizzBuzzConst.Text.改行
                 Case 4
-                    Result = Result & FB_Const.出力結果_Buzz & FB_Const.改行
+                    ResultOutput = ResultOutput & FizzBuzzConst.Text.出力結果_Buzz & FizzBuzzConst.Text.改行
                 Case 6
-                    Result = Result & FB_Const.出力結果_FizzBuzz & FB_Const.改行
+                    ResultOutput = ResultOutput & FizzBuzzConst.Text.出力結果_FizzBuzz & FizzBuzzConst.Text.改行
                 Case Else
-                    Result = Result & Number & FB_Const.改行
+                    ResultOutput = ResultOutput & Number & FizzBuzzConst.Text.改行
             End Select
-            Default_Number = Default_Number & Number & FB_Const.改行
+            NumberOutput = NumberOutput & Number & FizzBuzzConst.Text.改行
         Next
-        Me.lbl_Result.Text = Result
-        Me.lbl_Number.Text = Default_Number
+        'TODO: 改行タグ使わずに文字列を出力するまでは下記をコメントアウト
+        'ResultOutput = System.Web.HttpUtility.HtmlEncode(ResultOutput)
+        'NumberOutput = System.Web.HttpUtility.HtmlEncode(NumberOutput)
+        Me.lblResultOutput.Text = ResultOutput
+        Me.lblNumberOutput.Text = NumberOutput
     End Sub
 
     ''' <summary>
     ''' クリアボタン押下
     ''' </summary>
-    Protected Sub btn_c_Click(sender As Object, e As EventArgs) Handles btn_c.Click
-        Me.lbl_Normal.Text = ""
-        Me.lbl_FizzBuzz.Text = ""
-        Me.lbl_Result.Text = ""
-        Me.lbl_Number.Text = ""
+    Protected Sub btn_Clear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        Me.Panel1.Visible = False
+        Me.lblResultOutput.Text = ""
+        Me.lblNumberOutput.Text = ""
     End Sub
 
 End Class
