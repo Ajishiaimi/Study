@@ -38,14 +38,15 @@ Partial Class FizzBuzz
             End If
             Select Case Bit
                 Case 2
-                    ResultOutput = ResultOutput & FizzBuzzConst.Text.出力結果_Fizz & FizzBuzzConst.Text.改行
+                    ResultOutput = ResultOutput & FizzBuzzConst.Text.出力結果_Fizz
                 Case 4
-                    ResultOutput = ResultOutput & FizzBuzzConst.Text.出力結果_Buzz & FizzBuzzConst.Text.改行
+                    ResultOutput = ResultOutput & FizzBuzzConst.Text.出力結果_Buzz
                 Case 6
-                    ResultOutput = ResultOutput & FizzBuzzConst.Text.出力結果_FizzBuzz & FizzBuzzConst.Text.改行
+                    ResultOutput = ResultOutput & FizzBuzzConst.Text.出力結果_FizzBuzz
                 Case Else
-                    ResultOutput = ResultOutput & Number & FizzBuzzConst.Text.改行
+                    ResultOutput = ResultOutput & Number
             End Select
+            ResultOutput = ResultOutput & FizzBuzzConst.Text.改行
             NumberOutput = NumberOutput & Number & FizzBuzzConst.Text.改行
         Next
 
