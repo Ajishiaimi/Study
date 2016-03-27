@@ -31,10 +31,10 @@ Partial Class FizzBuzz
         For Number As Integer = MinNumber To MaxNumber
             Dim Bit As Integer = 0
             If Number Mod 3 = 0 Then
-                Bit = Bit + 2 ^ 1
+                Bit += 2 ^ 1
             End If
             If Number Mod 5 = 0 Then
-                Bit = Bit + 2 ^ 2
+                Bit += 2 ^ 2
             End If
             Select Case Bit
                 Case 2
