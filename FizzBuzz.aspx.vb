@@ -21,7 +21,7 @@ Partial Class FizzBuzz
         Dim MinNumber As Integer = FizzBuzzConst.Values.初期値
         Dim MaxNumber As Integer = FizzBuzzConst.Values.最大値
 
-        ' TODO:テキストボックスの入力チェックは未実装
+        ' TODO:テキストボックスの入力チェックを実装する
         Me.Panel1.Visible = True
 
         If Not String.IsNullOrEmpty(Me.txtNumber.Text) Then
@@ -48,7 +48,9 @@ Partial Class FizzBuzz
             End Select
             NumberOutput = NumberOutput & Number & FizzBuzzConst.Text.改行
         Next
-        'TODO: 改行タグ使わずに文字列を出力するまでは下記をコメントアウト
+
+        'TODO: 改行タグ使わずに文字列を出力する
+        'TODO: 改行タグを実装したら下記のコメントアウトをはずす
         'ResultOutput = System.Web.HttpUtility.HtmlEncode(ResultOutput)
         'NumberOutput = System.Web.HttpUtility.HtmlEncode(NumberOutput)
         Me.lblResultOutput.Text = ResultOutput
