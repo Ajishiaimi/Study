@@ -15,7 +15,7 @@ Partial Class FizzBuzz
     ''' <summary>
     ''' ポチっとなボタン押下時
     ''' </summary>
-    Protected Sub btn1_Click(sender As Object, e As EventArgs) Handles btnFizzBuzz.Click
+    Protected Sub btnFizzBuzz_Click(sender As Object, e As EventArgs) Handles btnFizzBuzz.Click
         Dim ResultOutput As String = ""
         Dim NumberOutput As String = ""
         Dim MinNumber As Integer = FizzBuzzConst.Values.初期値
@@ -61,7 +61,7 @@ Partial Class FizzBuzz
     ''' <summary>
     ''' クリアボタン押下
     ''' </summary>
-    Protected Sub btn_Clear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+    Protected Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         Me.Panel1.Visible = False
         Me.lblResultOutput.Text = ""
         Me.lblNumberOutput.Text = ""
