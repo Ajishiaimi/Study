@@ -6,9 +6,12 @@
     End Class
 
     Public MustInherit Class Text
-        Public Const 出力結果_Fizz As String = "Fizz"
-        Public Const 出力結果_Buzz As String = "Buzz"
-        Public Const 出力結果_FizzBuzz As String = "FizzBuzz"
+        Public Const Fizz As String = "Fizz"
+        Public Const Buzz As String = "Buzz"
+        Public Const FizzBuzz As String = "FizzBuzz"
+    End Class
+
+    Public MustInherit Class Tag
         Public Const 改行 As String = "<br />"
     End Class
 
