@@ -1,8 +1,8 @@
 ﻿Namespace FizzBuzzConst
 
     Public MustInherit Class Values
-        Public Const 初期値 As Integer = 1
-        Public Const 最大値 As Integer = 30
+        Public Const Initial As Integer = 1
+        Public Const Max As Integer = 30
     End Class
 
     Public MustInherit Class Text

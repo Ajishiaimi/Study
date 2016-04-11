@@ -1,6 +1,6 @@
 ﻿Option Explicit On
 
-Imports FizzBuzzConst
+Imports System.Web
 
 Partial Class FizzBuzz
     Inherits Page
@@ -18,8 +18,8 @@ Partial Class FizzBuzz
     Protected Sub btnFizzBuzz_Click(sender As Object, e As EventArgs) Handles btnFizzBuzz.Click
         Dim ResultOutput As String = ""
         Dim NumberOutput As String = ""
-        Dim MinNumber As Integer = FizzBuzzConst.Values.初期値
-        Dim MaxNumber As Integer = FizzBuzzConst.Values.最大値
+        Dim MinNumber As Integer = FizzBuzzConst.Values.Initial
+        Dim MaxNumber As Integer = FizzBuzzConst.Values.Max
 
         ' TODO:テキストボックスの入力チェックを実装する
         Me.Panel1.Visible = True
@@ -38,16 +38,16 @@ Partial Class FizzBuzz
             End If
             Select Case Bit
                 Case 2
-                    ResultOutput = ResultOutput & FizzBuzzConst.Text.出力結果_Fizz
+                    ResultOutput = ResultOutput & FizzBuzzConst.Text.Fizz
                 Case 4
-                    ResultOutput = ResultOutput & FizzBuzzConst.Text.出力結果_Buzz
+                    ResultOutput = ResultOutput & FizzBuzzConst.Text.Buzz
                 Case 6
-                    ResultOutput = ResultOutput & FizzBuzzConst.Text.出力結果_FizzBuzz
+                    ResultOutput = ResultOutput & FizzBuzzConst.Text.FizzBuzz
                 Case Else
                     ResultOutput = ResultOutput & Number
             End Select
-            ResultOutput = ResultOutput & FizzBuzzConst.Text.改行
-            NumberOutput = NumberOutput & Number & FizzBuzzConst.Text.改行
+            ResultOutput = ResultOutput & FizzBuzzConst.Tag.改行
+            NumberOutput = NumberOutput & Number & FizzBuzzConst.Tag.改行
         Next
 
         'TODO: 改行タグ使わずに文字列を出力する

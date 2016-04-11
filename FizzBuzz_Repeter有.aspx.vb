@@ -11,8 +11,8 @@ Partial Class FizzBuzz
     Protected Sub btnFizzBuzz_Click(sender As Object, e As EventArgs) Handles btnFizzBuzz.Click
         Dim ResultOutput As String = ""
         Dim NumberOutput As String = ""
-        Dim MinNumber As Integer = FizzBuzzConst.Values.初期値
-        Dim MaxNumber As Integer = FizzBuzzConst.Values.最大値
+        Dim MinNumber As Integer = FizzBuzzConst.Values.Initial
+        Dim MaxNumber As Integer = FizzBuzzConst.Values.Max
 
         ' TODO:テキストボックスの入力チェックを実装する
         If Not String.IsNullOrEmpty(Me.txtNumber.Text) Then
@@ -30,11 +30,11 @@ Partial Class FizzBuzz
             End If
             Select Case Bit
                 Case 2
-                    OutoutValues.Add(New Holder(Number, FizzBuzzConst.Text.出力結果_Fizz))
+                    OutoutValues.Add(New Holder(Number, FizzBuzzConst.Text.Fizz))
                 Case 4
-                    OutoutValues.Add(New Holder(Number, FizzBuzzConst.Text.出力結果_Buzz))
+                    OutoutValues.Add(New Holder(Number, FizzBuzzConst.Text.Buzz))
                 Case 6
-                    OutoutValues.Add(New Holder(Number, FizzBuzzConst.Text.出力結果_FizzBuzz))
+                    OutoutValues.Add(New Holder(Number, FizzBuzzConst.Text.FizzBuzz))
                 Case Else
                     OutoutValues.Add(New Holder(Number, Number))
             End Select
