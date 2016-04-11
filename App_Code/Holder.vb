@@ -2,7 +2,7 @@
 
 Public Class Holder
 
-    Private myNumberOutput As String
+    Private myNumberOutput As Integer
     Private myResultOutput As String
 
     Public Sub New(newNumberOutput As String, newResultOutput As String)
@@ -10,7 +10,7 @@ Public Class Holder
         Me.myResultOutput = newResultOutput
     End Sub
 
-    Public ReadOnly Property NumberOutput() As String
+    Public ReadOnly Property NumberOutput() As Integer
         Get
             Return myNumberOutput
         End Get
