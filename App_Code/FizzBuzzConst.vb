@@ -12,7 +12,7 @@
     End Class
 
     Public MustInherit Class Tag
-        Public Const 改行 As String = "<br />"
+        Public Const NewLine As String = "<br />"
     End Class
 
 End Namespace

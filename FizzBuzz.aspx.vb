@@ -46,8 +46,8 @@ Partial Class FizzBuzz
                 Case Else
                     ResultOutput = ResultOutput & Number
             End Select
-            ResultOutput = ResultOutput & FizzBuzzConst.Tag.改行
-            NumberOutput = NumberOutput & Number & FizzBuzzConst.Tag.改行
+            ResultOutput = ResultOutput & FizzBuzzConst.Tag.NewLine
+            NumberOutput = NumberOutput & Number & FizzBuzzConst.Tag.NewLine
         Next
 
         'TODO: 改行タグ使わずに文字列を出力する
