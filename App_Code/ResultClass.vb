@@ -1,11 +1,11 @@
 ﻿Imports Microsoft.VisualBasic
 
-Public Class Holder
+Public Class ResultClass
 
     Private myNumberOutput As Integer
     Private myResultOutput As String
 
-    Public Sub New(newNumberOutput As String, newResultOutput As String)
+    Public Sub New(newNumberOutput As Integer, newResultOutput As String)
         Me.myNumberOutput = newNumberOutput
         Me.myResultOutput = newResultOutput
     End Sub

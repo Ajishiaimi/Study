@@ -19,7 +19,7 @@ Partial Class FizzBuzz
             MaxNumber = Integer.Parse(Me.txtNumber.Text)
         End If
 
-        Dim OutoutValues As New ArrayList()
+        Dim OutoutValues As New List(Of ResultClass)
         For Number As Integer = MinNumber To MaxNumber
             Dim Bit As Integer = 0
             If Number Mod 3 = 0 Then
@@ -30,17 +30,26 @@ Partial Class FizzBuzz
             End If
             Select Case Bit
                 Case 2
-                    OutoutValues.Add(New Holder(Number, FizzBuzzConst.Text.Fizz))
+                    OutoutValues.Add(New ResultClass(Number, FizzBuzzConst.Text.Fizz))
                 Case 4
-                    OutoutValues.Add(New Holder(Number, FizzBuzzConst.Text.Buzz))
+                    OutoutValues.Add(New ResultClass(Number, FizzBuzzConst.Text.Buzz))
                 Case 6
-                    OutoutValues.Add(New Holder(Number, FizzBuzzConst.Text.FizzBuzz))
+                    OutoutValues.Add(New ResultClass(Number, FizzBuzzConst.Text.FizzBuzz))
                 Case Else
-                    OutoutValues.Add(New Holder(Number, Number))
+                    OutoutValues.Add(New ResultClass(Number, Number))
             End Select
         Next
         Me.Repeter1.DataSource = OutoutValues
         Me.Repeter1.DataBind()
+    End Sub
+
+    Protected Sub Repeter1_ItemDataBound(sender As Object, e As RepeaterItemEventArgs)
+        'TODO:   例外が発生するので修正
+        'Select Case e.Item.ItemType
+        '    Case ListItemType.Item, ListItemType.AlternatingItem
+        '        DirectCast(e.Item.FindControl("lblNumberOutput"), Label).Text = DirectCast(e.Item.DataItem, String)
+        '        DirectCast(e.Item.FindControl("lblResultOutput"), Label).Text = DirectCast(e.Item.DataItem, String)
+        'End Select
     End Sub
 
     ''' <summary>

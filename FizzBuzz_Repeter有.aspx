@@ -35,7 +35,7 @@
                         </td>
                     </tr>
                 </table>
-            <asp:Repeater ID="Repeter1" runat="server">
+            <asp:Repeater ID="Repeter1" OnItemDataBound="Repeter1_ItemDataBound" runat="server">
              <HeaderTemplate>
                     <table>
                         <tr>
@@ -45,8 +45,8 @@
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr>
-                        <td><asp:Label ID="lblNumberOutput" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "NumberOutput") %>' /></td>
-                        <td><asp:Label ID="lblResultOutput" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "ResultOutput") %>' /></td>
+                        <td><asp:Label ID="lblNumberOutput" runat="server" /></td>
+                        <td><asp:Label ID="lblResultOutput" runat="server" /></td>
                     </tr>
                 </ItemTemplate>
                 <FooterTemplate>
