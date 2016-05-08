@@ -22,4 +22,8 @@ Public Class ResultClass
         End Get
     End Property
 
+    Public Shared Widening Operator CType(ByVal val As ResultClass) As String
+        Return New String(val.myResultOutput.ToString)
+    End Operator
+
 End Class

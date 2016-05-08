@@ -45,7 +45,7 @@
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr>
-                        <td><asp:Label ID="lblNumberOutput" runat="server" /></td>
+                        <td><asp:Label ID="lblNumberOutput" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "NumberOutput") %>' /></td>
                         <td><asp:Label ID="lblResultOutput" runat="server" /></td>
                     </tr>
                 </ItemTemplate>

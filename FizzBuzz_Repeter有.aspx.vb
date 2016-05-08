@@ -45,11 +45,10 @@ Partial Class FizzBuzz
 
     Protected Sub Repeter1_ItemDataBound(sender As Object, e As RepeaterItemEventArgs)
         'TODO:   例外が発生するので修正
-        'Select Case e.Item.ItemType
-        '    Case ListItemType.Item, ListItemType.AlternatingItem
-        '        DirectCast(e.Item.FindControl("lblNumberOutput"), Label).Text = DirectCast(e.Item.DataItem, String)
-        '        DirectCast(e.Item.FindControl("lblResultOutput"), Label).Text = DirectCast(e.Item.DataItem, String)
-        'End Select
+        Select Case e.Item.ItemType
+            Case ListItemType.Item, ListItemType.AlternatingItem
+                DirectCast(e.Item.FindControl("lblResultOutput"), Label).Text = DirectCast(e.Item.DataItem, ResultClass)
+        End Select
     End Sub
 
     ''' <summary>
