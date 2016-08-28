@@ -1,0 +1,10 @@
+﻿
+//select.onchange = function ChangeMonth() {
+    var idx = obj.selectedIndex;
+    var value = obj.options[idx].value; // 値
+    alert(value);
+}
+
+select.onchange = function ChangeYear() {
+    alert("あああああああああああ")
+}
